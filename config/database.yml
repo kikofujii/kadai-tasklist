@@ -22,7 +22,7 @@ test:
 
 production:
   adapter: postgresql
-  encording: utf8
+  encoding: unicode
   poor: 5
   database: kadai-tasklist_production
   username: kasai-tasklist
