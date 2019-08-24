@@ -1,26 +1,31 @@
-<h1>id: <%= @task.id %>のTask詳細ページ</h1>
-
-    <table class="table table-bordered">
-        <div class="container">
-            <tr class="row">
-                <th class="col-2">id</th>
-                <td class="col-10"><%= @task.id %></td>
-            </tr>
-        </div>
-        <div class="container">
-            <tr class="row">
-                <th class="col-2">status</th>
-                <td class="col-10"><%= @task.status %></td>
-            </tr>
-        </div>
-        <div class="container">
-            <tr class="row">
-                <th class="col-2">task</th>
-                <td class="col-10"><%= @task.content %></td>
-            </tr>
-        </div>
-    </table>
-
-
-<%= link_to 'このTaskを編集する', edit_task_path(@task), class: 'btn btn-light' %>
-<%= link_to 'このTaskを削除する', @task, method: :delete, data: {confirm: '本当に削除してよろしいでしょうか？'}, class: 'btn btn-danger' %>
+<% if logged_in? %>
+    
+    <h1><%= current_user.name %> のid: <%= @task.id %>のTask詳細ページ</h1>
+    
+        <table class="table table-bordered">
+            <div class="container">
+                <tr class="row">
+                    <th class="col-2">id</th>
+                    <td class="col-10"><%= @task.id %></td>
+                </tr>
+            </div>
+            <div class="container">
+                <tr class="row">
+                    <th class="col-2">status</th>
+                    <td class="col-10"><%= @task.status %></td>
+                </tr>
+            </div>
+            <div class="container">
+                <tr class="row">
+                    <th class="col-2">task</th>
+                    <td class="col-10"><%= @task.content %></td>
+                </tr>
+            </div>
+        </table>
+    
+    
+    <%= link_to 'このTaskを編集する', edit_task_path(@task), class: 'btn btn-light' %>
+    <%= link_to 'このTaskを削除する', @task, method: :delete, data: {confirm: '本当に削除してよろしいでしょうか？'}, class: 'btn btn-danger' %>
+<% else %>
+    <%= render 'sessions/new' %>
+<% end %>
