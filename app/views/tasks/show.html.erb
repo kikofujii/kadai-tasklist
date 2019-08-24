@@ -3,24 +3,19 @@
     <h1><%= current_user.name %> のid: <%= @task.id %>のTask詳細ページ</h1>
     
         <table class="table table-bordered">
-            <div class="container">
-                <tr class="row">
-                    <th class="col-2">id</th>
-                    <td class="col-10"><%= @task.id %></td>
+            
+                <tr>
+                    <th scope="row">id</th>
+                    <td><%= @task.id %></td>
                 </tr>
-            </div>
-            <div class="container">
-                <tr class="row">
-                    <th class="col-2">status</th>
-                    <td class="col-10"><%= @task.status %></td>
+                <tr>
+                    <th scope="row">status</th>
+                    <td><%= @task.status %></td>
                 </tr>
-            </div>
-            <div class="container">
-                <tr class="row">
-                    <th class="col-2">task</th>
-                    <td class="col-10"><%= @task.content %></td>
+                <tr>
+                    <th scope="row">task</th>
+                    <td><%= @task.content %></td>
                 </tr>
-            </div>
         </table>
     
     
